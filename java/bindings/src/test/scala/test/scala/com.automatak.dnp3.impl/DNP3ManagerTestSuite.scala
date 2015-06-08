@@ -3,12 +3,12 @@ package com.automatak.dnp3.impl
 import org.scalatest.FunSuite
 import org.scalatest.junit.JUnitRunner
 import org.junit.runner.RunWith
-import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.Matchers
 import com.automatak.dnp3._
 import mock.{FormattingDataObserver, OutputHandler, ConstantCommandHandler}
 
 @RunWith(classOf[JUnitRunner])
-class DNP3ManagerTestSuite extends FunSuite with ShouldMatchers {
+class DNP3ManagerTestSuite extends FunSuite with Matchers {
 
   val iterations = 1
 
