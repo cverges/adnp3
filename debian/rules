@@ -39,3 +39,9 @@ override_dh_auto_install:
 	find $(CURDIR)/java -name "*.jar" -exec install -m 0644 {} $(CURDIR)/debian/tmp/usr/share/java \;
 	# Now run the regular deb packaging sequence
 	dh_auto_install
+
+override_dh_auto_clean:
+	# Delete the Java .jar and .class files first
+	rm -rf $(CURDIR)/java/*/target
+	# Now run the regular clean
+	dh_auto_clean
