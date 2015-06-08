@@ -18,9 +18,15 @@ export DH_OPTIONS
 
 export MAKEFLAGS="-j8"
 
+ifneq ("$(wildcard /usr/lib/jvm/java-8-oracle/bin/javac)", "")
+JAVAC="/usr/lib/jvm/java-8-oracle/bin/javac"
+else
+JAVAC="/usr/lib/jvm/java-7-oracle/bin/javac"
+endif
+
 DEB_CONFIGURE_FLAGS = \
 	--enable-java \
-	--with-javac=/usr/lib/jvm/java-7-oracle/bin/javac
+	--with-javac=$(JAVAC)
 
 %:
 	dh $@ --parallel --max-parallel=8 --with=autoreconf
@@ -40,8 +46,14 @@ override_dh_auto_install:
 	# Now run the regular deb packaging sequence
 	dh_auto_install
 
-override_dh_auto_clean:
+override_dh_auto_clean: print_config
 	# Delete the Java .jar and .class files first
-	rm -rf $(CURDIR)/java/*/target
+	find $(CURDIR)/java -type d -name target | xargs -I{} rm -rf {}
 	# Now run the regular clean
 	dh_auto_clean
+
+print_config:
+	@echo "CURDIR              : $(CURDIR)"
+	@echo "DEB_CONFIGURE_FLAGS : $(DEB_CONFIGURE_FLAGS)"
+	@echo "JAVAC               : $(JAVAC)"
+	@echo "MAKEFLAGS           : $(MAKEFLAGS)"

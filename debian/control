@@ -2,7 +2,7 @@ Source: opendnp3
 Section: libs
 Priority: extra
 Maintainer: Chris Verges <chris.verges@gmail.com>
-Build-Depends: debhelper (>= 8.0.0), dh-autoreconf, autoconf, automake, libtool, oracle-java7-installer, oracle-java7-set-default
+Build-Depends: debhelper (>= 8.0.0), dh-autoreconf, autoconf, automake, libtool, oracle-java7-installer | oracle-java8-installer, oracle-java7-set-default | oracle-java8-set-default
 Standards-Version: 3.9.2
 Homepage: http://dnp3.github.io
 
