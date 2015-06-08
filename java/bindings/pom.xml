@@ -44,7 +44,7 @@
         </dependency>
         <dependency>
             <groupId>org.scalatest</groupId>
-            <artifactId>scalatest_${scala.version}</artifactId>
+            <artifactId>scalatest_${scala.version.short}</artifactId>
             <version>${scalatest.version}</version>
             <scope>test</scope>
         </dependency>

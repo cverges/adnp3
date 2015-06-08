@@ -25,7 +25,7 @@ public class DNP3ConfigException extends RuntimeException {
 
     /**
      * Constructor that accepts a message
-     * @param message
+     * @param message the message describing the exception condition
      */
     public DNP3ConfigException(String message)
     {

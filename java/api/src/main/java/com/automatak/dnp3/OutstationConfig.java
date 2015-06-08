@@ -42,7 +42,7 @@ public class OutstationConfig {
     public boolean disableUnsol = false;
 
     /**
-     * controls what unsol classes are enabled by default. defaults to Class 1, 2, & 3
+     * Controls what unsol classes are enabled by default. defaults to Class 1, 2, &amp; 3
      *
      * Use PointClass.getMask to set this value
      */
@@ -60,7 +60,9 @@ public class OutstationConfig {
     public long timeSyncPeriodMs = 10 * 60 * 1000;
 
     /**
-     * The amount of time in milliseconds the slave will wait before sending new unsolicited data ( <= 0 == immediately, no delay). Defaults to 200ms.
+     * The amount of time in milliseconds the slave will wait before
+     * sending new unsolicited data ( &lt;=0 means immediately, no
+     * delay).  Defaults to 200ms.
      */
     public  long unsolPackDelayMs = 200;
 

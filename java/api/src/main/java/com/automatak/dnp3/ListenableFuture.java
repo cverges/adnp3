@@ -26,7 +26,6 @@ public interface ListenableFuture<T> {
 
     /**
      * A 'callback' that is registered via addListener and invoked when the operation completes.
-     * @param <T>
      */
     public interface CompletionListener<T>
     {
